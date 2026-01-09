@@ -1998,6 +1998,7 @@ impl GenerationSchedule {
 
                         // debug!("send task {:?} {node:?}", task.1);
 
+                        self.running_task_count += 1;
                         self.io_read
                             .send(node.pos)
                             .expect("io thread close unexpectedly");
